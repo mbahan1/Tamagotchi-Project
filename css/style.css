@@ -32,9 +32,9 @@ body {
     justify-content: space-around;
 }
 #light{
-    position: relative;
-    left: 90%;
-    top: 90%;
+    position: absolute;
+    left: 80%;
+    top: 10%;
 }
 
 /* for starter page */
