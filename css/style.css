@@ -21,10 +21,14 @@ body {
     margin-right: auto;
 }
 #mainFloor {
-    padding: 200px;
+    padding: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+#dog {
+    width: 150px;
+    height: auto;	
 }
 #controls {
     display: flex;
@@ -38,11 +42,15 @@ body {
 }
 
 /* for starter page */
+body {
+
+}
 #startPage{
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    background-color: lightblue;
 }
 #adoptionBanner{
     font-size: 64px;
@@ -52,10 +60,15 @@ body {
     border-radius: 5px;
     margin: 20px;
     padding: 10px;
+    background-color: white;
 }
 #options{
     margin: 20px;
-    padding: 100px;
+    padding: 10px;
+}
+#dogPic {
+    width: 150px;
+    height: auto;	
 }
 #nameIt{
     padding: 10px;

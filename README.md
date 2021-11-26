@@ -29,3 +29,31 @@ if I neglect my dog or it ages out and it goes to live on a farm outside of the 
 
 // image sources 
 cartoon-living-room - https://www.postermywall.com/index.php/art/template/22462e434b37f844c14ba6a9381c71fe/cartoon-living-room-tv-set-design-template
+
+Puppy and dog pictures 
+by Xinh Studio from the Noun Project
+https://thenounproject.com/xinhstudio/collection/joijoi-the-vegetarian-puppy/
+
+Bowl 
+by Juraj Sedlák from the Noun Project
+https://thenounproject.com/search/?q=dog+bowl&i=554796
+
+Dog Toys 
+by Imogen Oh from the Noun Project
+https://thenounproject.com/search/?q=dog+toy&i=487566
+
+Dog Bed 
+by Cynthia Navarro from the Noun Project
+https://thenounproject.com/search/?q=dog+bed&i=4188139
+
+Light switch 
+by Sara Jeffries from the Noun Project
+https://thenounproject.com/search/?q=light+switch&i=92359
+
+Door 
+by joeartcon from the Noun Project
+https://thenounproject.com/search/?q=door&i=894906
+
+Farm 
+by The Icon Z from the Noun Project
+https://thenounproject.com/search/?q=farm&i=4375644
