@@ -1,6 +1,15 @@
 body {
     margin: 0;
 }
+#mainPage{
+    margin: 0;
+    padding: 10px;
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
 #statusWindow {
     display: flex;
     flex-wrap: wrap;
@@ -8,10 +17,13 @@ body {
     border-width: 1px;
     border-color: black;
     border-radius: 5px;
-    margin: 20px;
+    margin: 0;
     padding: 10px;
     width: 250px;
+    height: auto;
     flex-direction: column;
+    background-color: white;
+    size-adjust: 75%;
 }
 .stats{
 
@@ -21,24 +33,42 @@ body {
     margin-right: auto;
 }
 #mainFloor {
-    padding: 50px;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
 }
 #dog {
     width: 150px;
     height: auto;	
+    margin: 0;
 }
 #controls {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin: 0;
 }
 #light{
     position: absolute;
     left: 80%;
     top: 10%;
+    width: 30px;
+    height: auto;	
+    margin: 0;
+}
+#bed{
+    width: 150px;
+    height: auto;
+}
+#toy{
+    width: 150px;
+    height: auto;
+}
+#bowl{
+    width: 150px;
+    height: auto;
 }
 
 /* for starter page */
