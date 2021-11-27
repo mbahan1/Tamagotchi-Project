@@ -6,7 +6,7 @@ body {
 /* overlay to cover game page for start/naming page */
 #startPageOverlay{
     position:absolute;
-    display: none; 
+    display: ; 
     /* start display value empty to make is visible and clickable, change to none on name click */
     opacity:1;
     left:0;
@@ -45,11 +45,10 @@ body {
     padding: 10px;
 }
 /* Overlay for instructions after adoption before starting the game */
-#instructionsOverlay{
+#instructions{
     position:absolute;
     display: none; 
     /* start display value empty to make is visible and clickable, change to none button click */
-    opacity:1;
     left:0;
     right:0;
     top:0;
@@ -57,7 +56,7 @@ body {
     z-index:1;
     justify-content: center;
     text-align: center;
-    background-color: lightblue;
+    background-color: red;
     margin: 0;
 }
 

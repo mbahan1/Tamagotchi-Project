@@ -7,11 +7,17 @@ async function setName(e) {
     e.preventDefault();
     dogName = document.getElementById("inputName").value;
     $('#nameStatus').html(`${dogName}'s Status`);
-    // console.log(dogName);
-    // console.log(`${dogName}'s Status`)
-    //Just to check it works
+    console.log(dogName);
+    console.log(`${dogName}'s Status`)    
     $('#nameIt').html(`You have named your new best friend ${dogName}`);
+    await new Promise(resolve => setTimeout(resolve, 3000));
+    // wait 3 seconds after naming
+    $("#startPageOverlay").css("display", "none");
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    $("#instructions").css("display", "normal");
+    //normal is empty placeholder to be toggled with "none"
 }
+
 //turn lights on and off on main page
 //when click the light switch, add
 //box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
@@ -28,10 +34,10 @@ function turnLightsOff() {
     lightsOn=false;
 }
 
-window.addEventListener('keydown',
-function(){lightsOn?turnLightsOff():turnLightsOn()} )
+// window.addEventListener('keydown',
+// function(){lightsOn?turnLightsOff():turnLightsOn()} )
 
 
 $("form").on("submit", setName)
 
-$("light").on("click",)
+// $("light").on("click",)
