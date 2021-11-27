@@ -14,7 +14,21 @@
     <script src="js/script.js" async defer></script>
 </head>
 <body>
-<div id="mainPage">
+    <div id="startPageOverlay" class="overlay">
+        <div id="adoptionBanner">
+            <p id="welcome">Happy Adoption Day!</p>
+        </div>
+        <div id="options">
+            <img id="dogPic" src="images/sitting-cropped-yellow.png" alt="Dog">
+        </div>        
+        <div id="nameIt">Betsow a fitting name upon your new best friend before you two head home</div>
+        <form id="enterName">
+            <input type="text" id ="inputName" placeholder="Enter Name" />
+            <input type="submit" value="Fill out the Paperwork!" />
+            <!-- onclick="setName()" add this to end of submit after paperwork!-->
+        </form>
+    </div>
+    <div id="mainPage">
     <div id="statusWindow">
         <p id="nameStatus">Status</p>
         <div id="hunger" class="stats">

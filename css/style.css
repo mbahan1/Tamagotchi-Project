@@ -1,10 +1,61 @@
 body {
     margin: 0;
     height: 100%;
+    background-image: url("../images/background.png");
 }
+/* overlay to cover game page for start/naming page */
+#startPageOverlay{
+    position:absolute;
+    opacity:1;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:1;
+    justify-content: center;
+    text-align: center;
+    background-color: lightblue;
+    margin: 0;
+}
+/* #startPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: lightblue;
+    margin: 0;
+} */
+#adoptionBanner{
+    font-size: 64px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 10px;
+    background-color: white;
+}
+#options{
+    margin: 20px;
+    padding: 10px;
+}
+#dogPic {
+    width: 150px;
+    height: auto;	
+}
+#nameIt{
+    padding: 10px;
+}
+#enterName{
+    margin: 20px;
+    padding: 10px;
+}
+
+
+/* Main game stuff */
 #mainPage{
     margin: 0;
-    padding: 10px;
+    padding: 0;
     background-image: url("../images/background.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -76,39 +127,3 @@ body {
 }
 
 /* for starter page */
-body {
-
-}
-#startPage{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    background-color: lightblue;
-    margin: 0;
-}
-#adoptionBanner{
-    font-size: 64px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-    border-radius: 5px;
-    margin: 20px;
-    padding: 10px;
-    background-color: white;
-}
-#options{
-    margin: 20px;
-    padding: 10px;
-}
-#dogPic {
-    width: 150px;
-    height: auto;	
-}
-#nameIt{
-    padding: 10px;
-}
-#enterName{
-    margin: 20px;
-    padding: 10px;
-}
