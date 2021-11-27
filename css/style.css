@@ -6,7 +6,8 @@ body {
 /* overlay to cover game page for start/naming page */
 #startPageOverlay{
     position:absolute;
-    display: none;
+    display: none; 
+    /* start display value empty to make is visible and clickable, change to none on name click */
     opacity:1;
     left:0;
     right:0;
@@ -18,14 +19,6 @@ body {
     background-color: lightblue;
     margin: 0;
 }
-/* #startPage{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    background-color: lightblue;
-    margin: 0;
-} */
 #adoptionBanner{
     font-size: 64px;
     border-style: solid;
@@ -51,7 +44,22 @@ body {
     margin: 20px;
     padding: 10px;
 }
-
+/* Overlay for instructions after adoption before starting the game */
+#instructionsOverlay{
+    position:absolute;
+    display: none; 
+    /* start display value empty to make is visible and clickable, change to none button click */
+    opacity:1;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:1;
+    justify-content: center;
+    text-align: center;
+    background-color: lightblue;
+    margin: 0;
+}
 
 /* Main game stuff */
 #mainPage{
@@ -104,6 +112,7 @@ body {
 }
 #dog {
     width: 125px;
+    /* change width value to 150px when dog hits 2/14 years old and grows */
     height: auto;	
     margin-top: 25px;
 }
@@ -133,5 +142,3 @@ body {
     width: 150px;
     height: auto;
 }
-
-/* for starter page */
