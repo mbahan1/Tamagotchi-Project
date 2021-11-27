@@ -6,6 +6,7 @@ body {
 /* overlay to cover game page for start/naming page */
 #startPageOverlay{
     position:absolute;
+    display: none;
     opacity:1;
     left:0;
     right:0;
@@ -40,7 +41,7 @@ body {
     padding: 10px;
 }
 #dogPic {
-    width: 150px;
+    width: 125px;
     height: auto;	
 }
 #nameIt{
@@ -71,7 +72,7 @@ body {
     border-width: 1px;
     border-color: black;
     border-radius: 5px;
-    margin: 0;
+    margin: 10px;
     padding: 10px;
     width: 250px;
     height: auto;
@@ -80,8 +81,14 @@ body {
     size-adjust: 75%;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,0);
 }
-.stats{
-
+#nameStatus {
+    padding: 5px;
+    text-align: center;
+    border-bottom: solid;
+    border-width: 1px;
+}
+#statusWindow p {
+    margin: 2px;
 }
 #nameStatus {
     margin-left: auto;
@@ -93,11 +100,12 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0;
+    height: 300px;
 }
 #dog {
-    width: 150px;
+    width: 125px;
     height: auto;	
-    margin: 0;
+    margin-top: 25px;
 }
 #controls {
     display: flex;
