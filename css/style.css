@@ -116,6 +116,18 @@ body {
 #statusWindow p {
     margin: 2px;
 }
+.meter {
+    height:16px;
+    width:90%;
+    border: solid;
+    border-width: 1px;
+}
+
+/* #hungerBar{
+    height:16px;
+    width:20%;
+    color: red;
+} */
 #nameStatus {
     margin-left: auto;
     margin-right: auto;

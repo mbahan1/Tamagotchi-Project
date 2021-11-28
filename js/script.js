@@ -1,5 +1,5 @@
 // ------------------------------------
-//          CREATE DOG CLASS
+//              DOG CLASS
 // ------------------------------------
 class Dog {
     constructor() {
@@ -32,6 +32,9 @@ class Dog {
         } else {
             this.sleep -= 3;
         }
+    }
+    getOlder() {
+        $("#dog").css("width", "150px");
     }
 };
 
