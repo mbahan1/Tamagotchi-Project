@@ -1,7 +1,46 @@
+// ------------------------------------
+//          CREATE DOG CLASS
+// ------------------------------------
+class Dog {
+    constructor() {
+        this.hunger = 2;
+        this.boredom = 2;
+        this.sleep = 2;
+        this.age = 0;
+        this.dogAge = 0;
+        this.color = ""; //just in case I add choosing dog in intro later
+        this.isPuppy = true;
+        this.isOld = false;
+    }
+    feed() {
+        if (this.hunger < 3) {
+            this.hunger = 0;
+        } else {
+            this.hunger -= 3;
+        }
+    }
+    play() {
+        if (this.boredom < 3) {
+            this.boredom = 0;
+        } else {
+            this.boredom -= 3;
+        }
+    }
+    sleep() {
+        if (this.sleep < 3) {
+            this.sleep = 0;
+        } else {
+            this.sleep -= 3;
+        }
+    }
+};
 
 
+// ------------------------------------
+//           WRITE FUNCTIONS
+// ------------------------------------
 
-//set name of dog on start page
+// 1. set name of dog on start page
 let dogName = "";
 async function setName(e) {
     e.preventDefault();
@@ -16,11 +55,32 @@ async function setName(e) {
     $("#startPageOverlay").css("display", "none");
     $("#dogPic").attr("src","../images/sitting-cropped-yellow.png");
 }
+// 2. confirm reading of care instructions
 async function hideInstructions(e) {
     e.preventDefault();
-    // await new Promise(resolve => setTimeout(resolve, 4000));
     $("#instructions").css("display", "none");
 }
+
+
+// ------------------------------------
+//           INVOKE FUNCTIONS
+// ------------------------------------
+
+// 0. Create dog :)
+const puppy = new Dog;
+
+// 1. first overlay, name it then hide overlay
+$("form").on("submit", setName) 
+
+// 2. second overlay, instructions then confirm
+document.getElementById("gotIt").addEventListener("click", function() {
+    $("#instructions").css("display", "none");
+});
+
+
+
+
+
 
 
 //turn lights on and off on main page
@@ -41,15 +101,5 @@ async function hideInstructions(e) {
 
 // window.addEventListener('keydown',
 // function(){lightsOn?turnLightsOff():turnLightsOn()} )
-
-//first overlay, name it then hide overlay
-$("form").on("submit", setName) 
-
-//second overlay, instructions then confirm
-document.getElementById("gotIt").addEventListener("click", function() {
-    $("#instructions").css("display", "none");
-});
-// $("form").on("submit", showInstructions)
-
 
 // $("light").on("click",)
