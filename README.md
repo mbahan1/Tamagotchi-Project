@@ -57,3 +57,7 @@ https://thenounproject.com/search/?q=door&i=894906
 Farm 
 by The Icon Z from the Noun Project
 https://thenounproject.com/search/?q=farm&i=4375644
+
+Warning 
+by DewDrops from the Noun Project
+https://thenounproject.com/search/?q=warning&i=936842

@@ -59,9 +59,24 @@ body {
     text-align: center;
     background-color: dimgray;
     color: white;
-    padding: 50px;
+    padding: 10px;
     margin: 0;
     z-index: 1;
+}
+#instructions h1 {
+    margin: 50px;
+}
+#instructions h3 {
+    margin: 50px;
+}
+
+#instructions img{
+    border: 1px solid #ddd;	/* thickness and color of border */
+    border-radius: 5px;		/* edge rounding of border */
+    width: 50px;				/* width of image (px or % or auto) */
+    height: auto;				/* height of image (px or % or auto) */
+    margin: 0;
+    padding: 0;
 }
 
 /* Main game stuff */
