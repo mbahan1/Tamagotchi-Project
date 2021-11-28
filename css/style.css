@@ -4,6 +4,7 @@ body {
     background-image: url("../images/background.png");
 }
 /* overlay to cover game page for start/naming page */
+/* Overlay for instructions after adoption before starting the game */
 #startPageOverlay{
     position:absolute;
     display: ; 
@@ -18,6 +19,7 @@ body {
     text-align: center;
     background-color: lightblue;
     margin: 0;
+    z-index: 2;
 }
 #adoptionBanner{
     font-size: 64px;
@@ -44,11 +46,11 @@ body {
     margin: 20px;
     padding: 10px;
 }
-/* Overlay for instructions after adoption before starting the game */
 #instructions{
     position:absolute;
-    display: none; 
+    display: ; 
     /* start display value empty to make is visible and clickable, change to none button click */
+    opacity:1;
     left:0;
     right:0;
     top:0;
@@ -58,6 +60,7 @@ body {
     text-align: center;
     background-color: red;
     margin: 0;
+    z-index: 1;
 }
 
 /* Main game stuff */
