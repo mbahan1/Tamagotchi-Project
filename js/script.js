@@ -42,8 +42,10 @@ async function hideInstructions(e) {
 // window.addEventListener('keydown',
 // function(){lightsOn?turnLightsOff():turnLightsOn()} )
 
+//first overlay, name it then hide overlay
+$("form").on("submit", setName) 
 
-$("form").on("submit", setName)
+//second overlay, instructions then confirm
 document.getElementById("gotIt").addEventListener("click", function() {
     $("#instructions").css("display", "none");
 });
