@@ -7,8 +7,8 @@ class Dog {
         this.boredom = 2;
         this.sleep = 2;
         this.age = 0;
-        this.dogAge = 0;
-        this.color = ""; //just in case I add choosing dog in intro later
+        // this.dogAge = 0;
+        // this.color = ""; just in case I add choosing dog in intro later
         this.isPuppy = true;
         this.isOld = false;
     }
@@ -21,9 +21,6 @@ class Dog {
         let timesTen = (this.hunger * 10);
         updateStatBar(hungerBarFill, timesTen);
     }
-    getHungry() {
-
-    }
     play() {
         if (this.boredom < 3) {
             this.boredom = 0;
@@ -33,7 +30,7 @@ class Dog {
         let timesTen = (this.hunger * 10);
         updateStatBar(boredomBarFill, timesTen);
     }
-    sleep() {
+    bed() {
         if (this.sleep < 3) {
             this.sleep = 0;
         } else {
@@ -44,6 +41,9 @@ class Dog {
     }
     getOlder() {
         $("#dog").css("width", "150px");
+    }
+    getOld() {
+        $("#dog").attr("src","../images/sitting-cropped-yellow-old.png");
     }
 };
 
@@ -75,17 +75,47 @@ async function hideInstructions(e) {
 }
 
 // 3. code for changing status bars progress
-function updateStatBar(statBar, percentage) {
-    let barToChange = document.getElementById(`${statBar}`);
-    if (percentage >= 0 && percentage <= 100) {
-        barToChange.style.width = value + "%"; 
-    }
-}
+// function updateStatBar(statBar, percentage) {
+//     let barToChange = document.getElementById(`${statBar}`);
+//     if (percentage >= 0 && percentage <= 100) {
+//         barToChange.style.width = percentage + "%"; 
+//     }
+// }
 // 4. code for when you have let a bar reach max and the dog dies
 async function itDied(e) {
     e.preventDefault();
-    $("#death").css("display", " ");
+    $("#death").css("z-index", "-1");
 }
+// 5. main game functions
+async function timePassing() {
+    while (puppy.hunger < 10 && puppy.boredom < 10 && puppy.sleep < 10 && puppy.age < 120) {
+        puppy.age += 1;        
+        document.getElementById('years').innerHTML = puppy.age;
+        // puppy.hunger++;
+        // document.getElementById('hungerBarFill').style.width = puppy.hunger + "%"; 
+        // puppy.boredom++;
+        // document.getElementById('boredomBarFill').style.width = puppy.boredom + "%";
+        // puppy.sleep++;
+        // document.getElementById('sleepBarFill').style.width = puppy.sleep + "%";
+    }
+}
+async function mainGame() {
+    while (puppy.hunger < 10 && puppy.boredom < 10 && puppy.sleep < 10 && puppy.age < 120){
+        setInterval('timePassing()', 10000);
+        if (puppy.hunger === 10 || puppy.boredom === 10 || puppy.sleep === 10) {
+            itDied;
+            break;
+        }
+        if (puppy.age >= 120) {
+            $("#deathText").html(`You have given ${dogName} a great life, they will be waiting for you across the rainbow bridge.`)
+            $("#deathImg").attr("src","../images/sitting-eyes-yellow-old.png");
+            itDied;
+            break;
+        }
+    }
+}
+
+
 
 // ------------------------------------
 //           INVOKE FUNCTIONS
@@ -93,6 +123,7 @@ async function itDied(e) {
 
 // 0. Create dog :)
 const puppy = new Dog;
+console.log(puppy);
 
 // 1. first overlay, name it then hide overlay
 $("form").on("submit", setName) 
@@ -103,6 +134,9 @@ document.getElementById("gotIt").addEventListener("click", function() {
 });
 
 
+setInterval('timePassing()', 10000);
+
+// mainGame()
 
 
 

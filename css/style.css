@@ -80,8 +80,7 @@ body {
 /* overlay for when the dog dies */
 #death{
     position:absolute;
-    display: ; 
-    opacity:1;
+    display: none; 
     left:0;
     right:0;
     top:0;
@@ -90,14 +89,14 @@ body {
     text-align: center;
     background-color: lightblue;
     color: white;
-    padding: 10px;
+    padding: 0;
     margin: 0;
     z-index: -1;
-    background-image: url("../images/farm.png");
+    /* background-image: url("../images/farm.png");
     background-repeat: no-repeat;
     background-position: top;
     background-attachment: fixed;
-    background-size: 50% 50%;
+    background-size: 50% 50%; */
 }
 #deathText{
     position:absolute;
@@ -120,7 +119,7 @@ body {
 /* overlay for lights out */
 #lights {
     position:absolute;
-    display: ; 
+    display: none; 
     opacity:.5;
     left:0;
     right:0;
@@ -130,7 +129,7 @@ body {
     text-align: center;
     background-color: black;
     color: white;
-    padding: 10px;
+    padding: 0;
     margin: 0;
     z-index: -1;
 }
@@ -139,11 +138,10 @@ body {
 #mainPage{
     margin: 0;
     padding: 0;
-    background-image: url("../images/background.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: 100% 100%;
+    background-image: url("../images/background2.png") lightblue;
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed; */
+    /* background-size: 100% 100%; */
     /* box-shadow: inset 0 0 0 1000px rgba(0,0,0,0); */
     height: 100%;
 }
