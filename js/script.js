@@ -11,6 +11,7 @@ class Dog {
         // this.color = ""; just in case I add choosing dog in intro later
         this.isPuppy = true;
         this.isOld = false;
+        this.isAlive = true;
     }
     feed() {
         if (this.hunger < 3) {
@@ -82,21 +83,31 @@ async function hideInstructions(e) {
 //     }
 // }
 // 4. code for when you have let a bar reach max and the dog dies
-async function itDied(e) {
-    e.preventDefault();
-    $("#death").css("z-index", "-1");
+function itDied() {
+    document.getElementById('death').style.zIndex = 10;
 }
 // 5. main game functions
 async function timePassing() {
-    while (puppy.hunger < 10 && puppy.boredom < 10 && puppy.sleep < 10 && puppy.age < 120) {
+    if (puppy.hunger < 10 && puppy.boredom < 10 && puppy.sleep < 10 && puppy.age < 120) {
         puppy.age += 1;        
         document.getElementById('years').innerHTML = puppy.age;
-        // puppy.hunger++;
-        // document.getElementById('hungerBarFill').style.width = puppy.hunger + "%"; 
-        // puppy.boredom++;
-        // document.getElementById('boredomBarFill').style.width = puppy.boredom + "%";
-        // puppy.sleep++;
-        // document.getElementById('sleepBarFill').style.width = puppy.sleep + "%";
+        console.log(puppy.age)
+        puppy.hunger++;
+        document.getElementById('hungerBarFill').style.width = (puppy.hunger*10) + "%"; 
+        puppy.boredom++;
+        document.getElementById('boredomBarFill').style.width = (puppy.boredom*10) + "%";
+        puppy.sleep++;
+        document.getElementById('sleepBarFill').style.width = (puppy.sleep*10) + "%";
+    }
+    if (puppy.hunger === 10 || puppy.boredom === 10 || puppy.sleep === 10) {
+        itDied;
+        return;
+    }
+    if (puppy.age >= 120) {
+        $("#deathText").html(`You have given ${dogName} a great life, they will be waiting for you across the rainbow bridge.`)
+        $("#deathImg").attr("src","../images/sitting-eyes-yellow-old.png");
+        itDied;
+        return;
     }
 }
 async function mainGame() {
@@ -133,8 +144,12 @@ document.getElementById("gotIt").addEventListener("click", function() {
     $("#instructions").css("display", "none");
 });
 
+if (puppy.age < 120) {
+    setInterval('timePassing()', 3000);      
+}
+  
 
-setInterval('timePassing()', 10000);
+
 
 // mainGame()
 
