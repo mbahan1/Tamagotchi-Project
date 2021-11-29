@@ -21,6 +21,9 @@ class Dog {
         let timesTen = (this.hunger * 10);
         updateStatBar(hungerBarFill, timesTen);
     }
+    getHungry() {
+
+    }
     play() {
         if (this.boredom < 3) {
             this.boredom = 0;
@@ -59,6 +62,7 @@ async function setName(e) {
     console.log(`${dogName}'s Status`)    
     $('#nameIt').html(`You have named your new best friend ${dogName}`);
     $("#dogPic").attr("src","../images/sitting-eyes-yellow.png");
+    $("#deathText").html(`You have neglected to meet ${dogName}'s needs, so they have run away to go live out the rest of their life on a farm outside of the city.`)
     await new Promise(resolve => setTimeout(resolve, 3000));
     // wait 3 seconds after naming    
     $("#startPageOverlay").css("display", "none");
@@ -76,6 +80,11 @@ function updateStatBar(statBar, percentage) {
     if (percentage >= 0 && percentage <= 100) {
         barToChange.style.width = value + "%"; 
     }
+}
+// 4. code for when you have let a bar reach max and the dog dies
+async function itDied(e) {
+    e.preventDefault();
+    $("#death").css("display", " ");
 }
 
 // ------------------------------------

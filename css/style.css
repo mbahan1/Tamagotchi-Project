@@ -69,7 +69,6 @@ body {
 #instructions h3 {
     margin: 50px;
 }
-
 #instructions img{
     border: 1px solid #ddd;	/* thickness and color of border */
     border-radius: 5px;		/* edge rounding of border */
@@ -77,6 +76,63 @@ body {
     height: auto;				/* height of image (px or % or auto) */
     margin: 0;
     padding: 0;
+}
+/* overlay for when the dog dies */
+#death{
+    position:absolute;
+    display: ; 
+    opacity:1;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    justify-content: center;
+    text-align: center;
+    background-color: lightblue;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    z-index: -1;
+    background-image: url("../images/farm.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    background-size: 50% 50%;
+}
+#deathText{
+    position:absolute;
+    left: 30%;
+    top: 60%;
+    width: 40%;
+    height: auto;	
+    margin: 0;
+    color: black;
+}
+#reload{
+    position:absolute;
+    left: 42%;
+    top: 80%;
+    width: 16%;
+    height: auto;	
+    margin: 0;
+    color: black;
+}
+/* overlay for lights out */
+#lights {
+    position:absolute;
+    display: ; 
+    opacity:.5;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    justify-content: center;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    z-index: -1;
 }
 
 /* Main game stuff */
@@ -140,12 +196,6 @@ body {
     width: 30%;
     background-color: red;
 }
-
-/* #hungerBar{
-    height:16px;
-    width:20%;
-    color: red;
-} */
 #nameStatus {
     margin-left: auto;
     margin-right: auto;
