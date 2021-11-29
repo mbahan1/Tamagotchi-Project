@@ -18,6 +18,8 @@ class Dog {
         } else {
             this.hunger -= 3;
         }
+        let timesTen = (this.hunger * 10);
+        updateStatBar(hungerBarFill, timesTen);
     }
     play() {
         if (this.boredom < 3) {
@@ -25,6 +27,8 @@ class Dog {
         } else {
             this.boredom -= 3;
         }
+        let timesTen = (this.hunger * 10);
+        updateStatBar(boredomBarFill, timesTen);
     }
     sleep() {
         if (this.sleep < 3) {
@@ -32,6 +36,8 @@ class Dog {
         } else {
             this.sleep -= 3;
         }
+        let timesTen = (this.hunger * 10);
+        updateStatBar(sleepBarFill, timesTen);
     }
     getOlder() {
         $("#dog").css("width", "150px");
