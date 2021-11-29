@@ -64,6 +64,13 @@ async function hideInstructions(e) {
     $("#instructions").css("display", "none");
 }
 
+// 3. code for changing status bars progress
+function updateStatBar(statBar, percentage) {
+    let barToChange = document.getElementById(`${statBar}`);
+    if (percentage >= 0 && percentage <= 100) {
+        barToChange.style.width = value + "%"; 
+    }
+}
 
 // ------------------------------------
 //           INVOKE FUNCTIONS
