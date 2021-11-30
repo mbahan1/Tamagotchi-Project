@@ -5,7 +5,6 @@ body {
     /* background-image: url("../images/background2.png"); */
 }
 /* overlay to cover game page for start/naming page */
-/* Overlay for instructions after adoption before starting the game */
 #startPageOverlay{
     position:absolute;
     display: ;
@@ -46,6 +45,7 @@ body {
     margin: 20px;
     padding: 10px;
 }
+/* Overlay for instructions after adoption before starting the game */
 #instructions{
     position:absolute;
     display: ; 
@@ -92,11 +92,6 @@ body {
     padding: 0;
     margin: 0;
     z-index: -5;
-    /* background-image: url("../images/farm.png");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-attachment: fixed;
-    background-size: 50% 50%; */
 }
 #deathText{
     position:absolute;
@@ -150,7 +145,6 @@ body {
     margin: 0;
     padding: 0;
     background-image: url("../images/background2.png");
-    /* box-shadow: inset 0 0 0 1000px rgba(0,0,0,0); */
     width: 100%;
     z-index: 2;
 }
@@ -168,7 +162,6 @@ body {
     flex-direction: column;
     background-color: white;
     size-adjust: 75%;
-    /* box-shadow: inset 0 0 0 1000px rgba(0,0,0,0); */
 }
 #nameStatus {
     padding: 5px;
@@ -190,17 +183,17 @@ body {
 }
 #hungerBarFill{
     height: 100%;
-    width: 60%;
+    width: 0%;
     background-color: red;
 }
 #boredomBarFill{
     height: 100%;
-    width: 20%;
+    width: 0%;
     background-color: red;
 }
 #sleepBarFill{
     height: 100%;
-    width: 30%;
+    width: 0%;
     background-color: red;
 }
 #nameStatus {
@@ -217,7 +210,7 @@ body {
 }
 #dog {
     width: auto;
-    /* change width value to 150px when dog hits 2/14 years old and grows */
+    /* change height value when dog hits 2/14 years old and grows up*/
     height: 175px;	
     margin-top: 25px;
 }
@@ -234,6 +227,18 @@ body {
     width: 30px;
     height: auto;	
     margin: 0;
+}
+#evolution{
+    position: absolute;
+    left: 35%;
+    top: 230px;
+    width: 30%;
+    height: auto;	
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+    background: white;
+    border-radius: 5px;
 }
 #bed{
     width: 150px;

@@ -21,7 +21,7 @@ class Dog {
             this.hunger -= 3;
         }
         document.getElementById('hungerBarFill').style.width = (puppy.hunger*10) + "%"; 
-        let currentDogImage = $('#dog').attr('src');
+        // let currentDogImage = $('#dog').attr('src');
         $("#dog").attr("src","../images/eatting.png");
         delay(1000).then(() => $("#dog").attr("src", currentDogImage));
     }
@@ -32,7 +32,7 @@ class Dog {
             this.boredom -= 3;
         }
         document.getElementById('boredomBarFill').style.width = (puppy.boredom*10) + "%";
-        let currentDogImage = $('#dog').attr('src');
+        // let currentDogImage = $('#dog').attr('src');
         $("#dog").attr("src","../images/playing.png");
         delay(1000).then(() => $("#dog").attr("src", currentDogImage));
     }
@@ -43,15 +43,20 @@ class Dog {
             this.sleep -= 3;
         }
         document.getElementById('sleepBarFill').style.width = (puppy.sleep*10) + "%";
-        let currentDogImage = $('#dog').attr('src');
+        // let currentDogImage = $('#dog').attr('src');
         $("#dog").attr("src","../images/sleeping.png");
         delay(1000).then(() => $("#dog").attr("src", currentDogImage));
     }
     getOlder() {
+        $("#evolution").html(`${dogName} the puppy has grown up, and is now ${dogName} the dog!`);
+        delay(5000).then(() => $("#evolution").html(""));
         $("#dog").css("height", "225px");
     }
     getOld() {
+        $("#evolution").html(`${dogName} is still a puppy at heart, but has gained some gray in the muzzle.`);
+        delay(5000).then(() => $("#evolution").html(""));
         $("#dog").attr("src","../images/sitting-cropped-yellow-old.png");
+        currentDogImage = $('#dog').attr('src');
     }
     died() {
         $("#deathText").html(`You have neglected to meet ${dogName}'s needs, so they have run away to go live out the rest of their life on a farm outside of the city.`)
@@ -73,6 +78,7 @@ class Dog {
 let dogName = "";
 $("#dog").attr("src","../images/sitting-cropped-yellow.png");
 let lightsOn = true;
+let currentDogImage = $('#dog').attr('src');
 function delay(time) {
     return new Promise(resolve => setTimeout(resolve, time));
 }
