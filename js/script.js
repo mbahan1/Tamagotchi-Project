@@ -22,9 +22,8 @@ class Dog {
         }
         document.getElementById('hungerBarFill').style.width = (puppy.hunger*10) + "%"; 
         let currentDogImage = $('#dog').attr('src');
-        $("#dog").attr("src","../images/sitting-cropped-yellow-old.png");
-        
-        
+        $("#dog").attr("src","../images/eatting.png");
+        delay(1000).then(() => $("#dog").attr("src", currentDogImage));
     }
     play() {
         if (this.boredom < 3) {
@@ -33,6 +32,9 @@ class Dog {
             this.boredom -= 3;
         }
         document.getElementById('boredomBarFill').style.width = (puppy.boredom*10) + "%";
+        let currentDogImage = $('#dog').attr('src');
+        $("#dog").attr("src","../images/playing.png");
+        delay(1000).then(() => $("#dog").attr("src", currentDogImage));
     }
     bedtime() {
         if (this.sleep < 3) {
@@ -41,9 +43,12 @@ class Dog {
             this.sleep -= 3;
         }
         document.getElementById('sleepBarFill').style.width = (puppy.sleep*10) + "%";
+        let currentDogImage = $('#dog').attr('src');
+        $("#dog").attr("src","../images/sleeping.png");
+        delay(1000).then(() => $("#dog").attr("src", currentDogImage));
     }
     getOlder() {
-        $("#dog").css("width", "150px");
+        $("#dog").css("height", "225px");
     }
     getOld() {
         $("#dog").attr("src","../images/sitting-cropped-yellow-old.png");
@@ -66,6 +71,7 @@ class Dog {
 
 // 1. set name of dog on start page declare lightsOn and make delay function
 let dogName = "";
+$("#dog").attr("src","../images/sitting-cropped-yellow.png");
 let lightsOn = true;
 function delay(time) {
     return new Promise(resolve => setTimeout(resolve, time));

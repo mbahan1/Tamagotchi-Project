@@ -216,9 +216,9 @@ body {
     height: 300px;
 }
 #dog {
-    width: 125px;
+    width: auto;
     /* change width value to 150px when dog hits 2/14 years old and grows */
-    height: auto;	
+    height: 175px;	
     margin-top: 25px;
 }
 #controls {
