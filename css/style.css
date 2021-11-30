@@ -123,8 +123,8 @@ body {
 /* overlay for lights out */
 #lights {
     position:absolute;
-    display: none; 
-    opacity:.5;
+    display: ; 
+    opacity:0;
     left:0;
     right:0;
     top:0;
@@ -135,7 +135,8 @@ body {
     color: white;
     padding: 0;
     margin: 0;
-    z-index: -1;
+    z-index: 5;
+    pointer-events: none;
 }
 
 /* Main game stuff */

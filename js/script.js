@@ -21,6 +21,10 @@ class Dog {
             this.hunger -= 3;
         }
         document.getElementById('hungerBarFill').style.width = (puppy.hunger*10) + "%"; 
+        let currentDogImage = $('#dog').attr('src');
+        $("#dog").attr("src","../images/sitting-cropped-yellow-old.png");
+        
+        
     }
     play() {
         if (this.boredom < 3) {
@@ -60,8 +64,13 @@ class Dog {
 //           WRITE FUNCTIONS
 // ------------------------------------
 
-// 1. set name of dog on start page
+// 1. set name of dog on start page declare lightsOn and make delay function
 let dogName = "";
+let lightsOn = true;
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+}
+
 async function setName(e) {
     e.preventDefault();
     dogName = document.getElementById("inputName").value;
@@ -82,18 +91,7 @@ async function hideInstructions(e) {
     $("#instructions").css("display", "none");
 }
 
-// 3. code for changing status bars progress
-// function updateStatBar(statBar, percentage) {
-//     let barToChange = document.getElementById(`${statBar}`);
-//     if (percentage >= 0 && percentage <= 100) {
-//         barToChange.style.width = percentage + "%"; 
-//     }
-// }
-// 4. code for when you have let a bar reach max and the dog dies
-// function itDied() {
-//     document.getElementById('death').style.zIndex = 10;
-// }
-// 5. main game functions
+// 3. main game function
 async function timePassing() {
     if (puppy.hunger < 10 && puppy.boredom < 10 && puppy.sleep < 10 && puppy.age < 120) {
         puppy.age += 1;        
@@ -123,12 +121,20 @@ async function timePassing() {
         return;
     }
 }
-async function mainGame() {
-    if (puppy.age < 120 && puppy.isAlive && puppy.start) {
-        setInterval('timePassing()', 3000);      
+
+// 4. lightswitch for changing lights on or off
+function lightSwitch() {
+    if (lightsOn) {
+        $("#lights").css("opacity", ".4");
+        $("#light").attr("src","../images/lights-off.png");
+        lightsOn = false;
+    }
+    else {
+        $("#lights").css("opacity", "0");
+        $("#light").attr("src","../images/lights.png");
+        lightsOn = true;
     }
 }
-
 
 
 // ------------------------------------
@@ -139,10 +145,10 @@ async function mainGame() {
 const puppy = new Dog;
 console.log(puppy);
 
-// 1. first overlay, name it then hide overlay
+// 1. first overlay, name it then hide adoption overlay
 $("form").on("submit", setName) 
 
-// 2. second overlay, instructions then confirm
+// 2. second overlay, instructions then confirm and start game
 document.getElementById("gotIt").addEventListener("click", function() {
     $("#instructions").css("display", "none");
     if (puppy.age < 120 && puppy.isAlive) {
@@ -150,50 +156,25 @@ document.getElementById("gotIt").addEventListener("click", function() {
     }
 });
 
+// 3. listeners on interaction buttons
 document.getElementById("bed").addEventListener("click", function() {
     puppy.bedtime();
+    if (lightsOn = true) {
+        lightSwitch();
+        delay(1000).then(() => lightSwitch());
+    }
 });
-
 document.getElementById("toy").addEventListener("click", function() {
     puppy.play();
 });
-
 document.getElementById("bowl").addEventListener("click", function() {
     puppy.feed();
 });
+document.getElementById("light").addEventListener("click", function() {
+    lightSwitch();
+});
 
-// if (puppy.age < 120 && puppy.isAlive) {
-//     setInterval('timePassing()', 3000);      
-// }
-  
+// 4. end game reload
 document.getElementById("reload").addEventListener("click", function() {
     document.location.reload(true);
 });
-
-
-// mainGame()
-
-
-
-
-
-//turn lights on and off on main page
-//when click the light switch, add
-//box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
-//to mainPage and statusWindow css
-// let lightsOn=true;
-// function turnLightsOn() {
-//     $("#mainPage").css("box-shadow", "inset 0 0 0 1000px rgba(0,0,0,0)");
-//     $("#statusWindow").css("box-shadow", "inset 0 0 0 1000px rgba(0,0,0,0)");
-//     lightsOn=true;
-// }
-// function turnLightsOff() {
-//     $("#mainPage").css("box-shadow", "inset 0 0 0 1000px rgba(0,0,0,.4)");
-//     $("#statusWindow").css("box-shadow", "inset 0 0 0 1000px rgba(0,0,0,.4)");
-//     lightsOn=false;
-// }
-
-// window.addEventListener('keydown',
-// function(){lightsOn?turnLightsOff():turnLightsOn()} )
-
-// $("light").on("click",)
