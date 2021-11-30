@@ -1,25 +1,25 @@
 body {
     margin: 0;
     height: 100%;
-    background-image: url("../images/background.png");
+    background-color: green;
+    /* background-image: url("../images/background2.png"); */
 }
 /* overlay to cover game page for start/naming page */
 /* Overlay for instructions after adoption before starting the game */
 #startPageOverlay{
     position:absolute;
-    display: ; 
+    display: ;
     /* start display value empty to make is visible and clickable, change to none on name click */
     opacity:1;
     left:0;
     right:0;
     top:0;
     bottom:0;
-    z-index:1;
     justify-content: center;
     text-align: center;
     background-color: lightblue;
     margin: 0;
-    z-index: 2;
+    z-index: 4;
 }
 #adoptionBanner{
     font-size: 64px;
@@ -61,7 +61,7 @@ body {
     color: white;
     padding: 10px;
     margin: 0;
-    z-index: 1;
+    z-index: 3;
 }
 #instructions h1 {
     margin: 50px;
@@ -80,7 +80,7 @@ body {
 /* overlay for when the dog dies */
 #death{
     position:absolute;
-    display: none; 
+    display: ; 
     left:0;
     right:0;
     top:0;
@@ -91,7 +91,7 @@ body {
     color: white;
     padding: 0;
     margin: 0;
-    z-index: -1;
+    z-index: -5;
     /* background-image: url("../images/farm.png");
     background-repeat: no-repeat;
     background-position: top;
@@ -106,6 +106,10 @@ body {
     height: auto;	
     margin: 0;
     color: black;
+}
+#deathImg{
+    height: 60%;
+    width: auto;
 }
 #reload{
     position:absolute;
@@ -136,14 +140,18 @@ body {
 
 /* Main game stuff */
 #mainPage{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    display: ;
     margin: 0;
     padding: 0;
-    background-image: url("../images/background2.png") lightblue;
-    /* background-repeat: no-repeat; */
-    /* background-attachment: fixed; */
-    /* background-size: 100% 100%; */
+    background-image: url("../images/background2.png");
     /* box-shadow: inset 0 0 0 1000px rgba(0,0,0,0); */
-    height: 100%;
+    width: 100%;
+    z-index: 2;
 }
 #statusWindow {
     display: flex;
@@ -231,7 +239,7 @@ body {
     height: auto;
 }
 #toy{
-    width: 150px;
+    width: 130px;
     height: auto;
 }
 #bowl{

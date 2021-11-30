@@ -3,15 +3,16 @@
 // ------------------------------------
 class Dog {
     constructor() {
-        this.hunger = 2;
-        this.boredom = 2;
-        this.sleep = 2;
+        this.hunger = 0;
+        this.boredom = 0;
+        this.sleep = 0;
         this.age = 0;
         // this.dogAge = 0;
         // this.color = ""; just in case I add choosing dog in intro later
         this.isPuppy = true;
         this.isOld = false;
         this.isAlive = true;
+        this.start = false;
     }
     feed() {
         if (this.hunger < 3) {
@@ -19,8 +20,7 @@ class Dog {
         } else {
             this.hunger -= 3;
         }
-        let timesTen = (this.hunger * 10);
-        updateStatBar(hungerBarFill, timesTen);
+        document.getElementById('hungerBarFill').style.width = (puppy.hunger*10) + "%"; 
     }
     play() {
         if (this.boredom < 3) {
@@ -28,23 +28,30 @@ class Dog {
         } else {
             this.boredom -= 3;
         }
-        let timesTen = (this.hunger * 10);
-        updateStatBar(boredomBarFill, timesTen);
+        document.getElementById('boredomBarFill').style.width = (puppy.boredom*10) + "%";
     }
-    bed() {
+    bedtime() {
         if (this.sleep < 3) {
             this.sleep = 0;
         } else {
             this.sleep -= 3;
         }
-        let timesTen = (this.hunger * 10);
-        updateStatBar(sleepBarFill, timesTen);
+        document.getElementById('sleepBarFill').style.width = (puppy.sleep*10) + "%";
     }
     getOlder() {
         $("#dog").css("width", "150px");
     }
     getOld() {
         $("#dog").attr("src","../images/sitting-cropped-yellow-old.png");
+    }
+    died() {
+        $("#deathText").html(`You have neglected to meet ${dogName}'s needs, so they have run away to go live out the rest of their life on a farm outside of the city.`)
+        $("#mainPage").css("display", "none");
+    }
+    survived(){
+        $("#deathText").html(`You have given ${dogName} a great life, they will be waiting for you across the rainbow bridge.`)
+        $("#deathImg").attr("src","../images/sitting-eyes-yellow-old.png");
+        $("#mainPage").css("display", "none");
     }
 };
 
@@ -83,9 +90,9 @@ async function hideInstructions(e) {
 //     }
 // }
 // 4. code for when you have let a bar reach max and the dog dies
-function itDied() {
-    document.getElementById('death').style.zIndex = 10;
-}
+// function itDied() {
+//     document.getElementById('death').style.zIndex = 10;
+// }
 // 5. main game functions
 async function timePassing() {
     if (puppy.hunger < 10 && puppy.boredom < 10 && puppy.sleep < 10 && puppy.age < 120) {
@@ -99,30 +106,26 @@ async function timePassing() {
         puppy.sleep++;
         document.getElementById('sleepBarFill').style.width = (puppy.sleep*10) + "%";
     }
+    if (puppy.age === 14){
+        puppy.getOlder();
+    }
+    if (puppy.age === 70){
+        puppy.getOld();
+    }
     if (puppy.hunger === 10 || puppy.boredom === 10 || puppy.sleep === 10) {
-        itDied;
+        puppy.died();
+        puppy.isAlive = false;
         return;
     }
     if (puppy.age >= 120) {
-        $("#deathText").html(`You have given ${dogName} a great life, they will be waiting for you across the rainbow bridge.`)
-        $("#deathImg").attr("src","../images/sitting-eyes-yellow-old.png");
-        itDied;
+        puppy.survived();
+        puppy.isAlive = false;
         return;
     }
 }
 async function mainGame() {
-    while (puppy.hunger < 10 && puppy.boredom < 10 && puppy.sleep < 10 && puppy.age < 120){
-        setInterval('timePassing()', 10000);
-        if (puppy.hunger === 10 || puppy.boredom === 10 || puppy.sleep === 10) {
-            itDied;
-            break;
-        }
-        if (puppy.age >= 120) {
-            $("#deathText").html(`You have given ${dogName} a great life, they will be waiting for you across the rainbow bridge.`)
-            $("#deathImg").attr("src","../images/sitting-eyes-yellow-old.png");
-            itDied;
-            break;
-        }
+    if (puppy.age < 120 && puppy.isAlive && puppy.start) {
+        setInterval('timePassing()', 3000);      
     }
 }
 
@@ -142,13 +145,30 @@ $("form").on("submit", setName)
 // 2. second overlay, instructions then confirm
 document.getElementById("gotIt").addEventListener("click", function() {
     $("#instructions").css("display", "none");
+    if (puppy.age < 120 && puppy.isAlive) {
+        setInterval('timePassing()', 3000);      
+    }
 });
 
-if (puppy.age < 120) {
-    setInterval('timePassing()', 3000);      
-}
-  
+document.getElementById("bed").addEventListener("click", function() {
+    puppy.bedtime();
+});
 
+document.getElementById("toy").addEventListener("click", function() {
+    puppy.play();
+});
+
+document.getElementById("bowl").addEventListener("click", function() {
+    puppy.feed();
+});
+
+// if (puppy.age < 120 && puppy.isAlive) {
+//     setInterval('timePassing()', 3000);      
+// }
+  
+document.getElementById("reload").addEventListener("click", function() {
+    document.location.reload(true);
+});
 
 
 // mainGame()
