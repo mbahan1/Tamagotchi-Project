@@ -20,7 +20,7 @@ class Dog {
         }
         document.getElementById('hungerBarFill').style.width = (puppy.hunger*10) + "%"; 
         // let currentDogImage = $('#dog').attr('src');
-        $("#dog").attr("src","../images/eatting.png");
+        $("#dog").attr("src","./images/eatting.png");
         delay(1000).then(() => $("#dog").attr("src", currentDogImage));
     }
     play() {
@@ -31,7 +31,7 @@ class Dog {
         }
         document.getElementById('boredomBarFill').style.width = (puppy.boredom*10) + "%";
         // let currentDogImage = $('#dog').attr('src');
-        $("#dog").attr("src","../images/playing.png");
+        $("#dog").attr("src","./images/playing.png");
         delay(1000).then(() => $("#dog").attr("src", currentDogImage));
     }
     bedtime() {
@@ -42,7 +42,7 @@ class Dog {
         }
         document.getElementById('sleepBarFill').style.width = (puppy.sleep*10) + "%";
         // let currentDogImage = $('#dog').attr('src');
-        $("#dog").attr("src","../images/sleeping.png");
+        $("#dog").attr("src","./images/sleeping.png");
         delay(1000).then(() => $("#dog").attr("src", currentDogImage));
     }
     getOlder() {
@@ -53,7 +53,7 @@ class Dog {
     getOld() {
         $("#evolution").html(`${dogName} is still a puppy at heart, but has gained some gray in the muzzle.`);
         delay(5000).then(() => $("#evolution").html(""));
-        $("#dog").attr("src","../images/sitting-cropped-yellow-old.png");
+        $("#dog").attr("src","./images/sitting-cropped-yellow-old.png");
         currentDogImage = $('#dog').attr('src');
     }
     died() {
@@ -62,7 +62,7 @@ class Dog {
     }
     survived(){
         $("#deathText").html(`You have given ${dogName} a great life, they will be waiting for you across the rainbow bridge.`)
-        $("#deathImg").attr("src","../images/sitting-eyes-yellow-old.png");
+        $("#deathImg").attr("src","./images/sitting-eyes-yellow-old.png");
         $("#mainPage").css("display", "none");
     }
 };
@@ -74,7 +74,8 @@ class Dog {
 
 // 1. set name of dog on start page declare lightsOn and make delay function
 let dogName = "";
-$("#dog").attr("src","../images/sitting-cropped-yellow.png");
+$("#dog").attr("src","./images/sitting-cropped-yellow.png"); 
+// "../images/sitting-cropped-yellow.png"
 let lightsOn = true;
 let currentDogImage = $('#dog').attr('src');
 function delay(time) {
@@ -88,12 +89,13 @@ async function setName(e) {
     console.log(dogName);
     console.log(`${dogName}'s Status`)    
     $('#nameIt').html(`You have named your new best friend ${dogName}`);
-    $("#dogPic").attr("src","../images/sitting-eyes-yellow.png");
+    $("#dogPic").attr("src","./images/sitting-eyes-yellow.png");
+    // "../images/sitting-eyes-yellow.png"
     $("#deathText").html(`You have neglected to meet ${dogName}'s needs, so they have run away to go live out the rest of their life on a farm outside of the city.`)
     await new Promise(resolve => setTimeout(resolve, 3000));
     // wait 3 seconds after naming    
     $("#startPageOverlay").css("display", "none");
-    $("#dogPic").attr("src","../images/sitting-cropped-yellow.png");
+    $("#dogPic").attr("src","./images/sitting-cropped-yellow.png");
 }
 // 2. confirm reading of care instructions
 async function hideInstructions(e) {
@@ -136,12 +138,12 @@ async function timePassing() {
 function lightSwitch() {
     if (lightsOn) {
         $("#lights").css("opacity", ".4");
-        $("#light").attr("src","../images/lights-off.png");
+        $("#light").attr("src","./images/lights-off.png");
         lightsOn = false;
     }
     else {
         $("#lights").css("opacity", "0");
-        $("#light").attr("src","../images/lights.png");
+        $("#light").attr("src","./images/lights.png");
         lightsOn = true;
     }
 }
