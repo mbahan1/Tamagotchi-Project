@@ -7,8 +7,6 @@ class Dog {
         this.boredom = 0;
         this.sleep = 0;
         this.age = 0;
-        // this.dogAge = 0;
-        // this.color = ""; just in case I add choosing dog in intro later
         this.isPuppy = true;
         this.isOld = false;
         this.isAlive = true;

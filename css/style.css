@@ -1,14 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@300&display=swap');
 body {
     margin: 0;
     height: 100%;
-    background-color: green;
-    /* background-image: url("../images/background2.png"); */
+    background-color: #229995;
+    font-family: 'Nunito', sans-serif;
 }
 /* overlay to cover game page for start/naming page */
 #startPageOverlay{
     position:absolute;
     display: ;
-    /* start display value empty to make is visible and clickable, change to none on name click */
     opacity:1;
     left:0;
     right:0;
@@ -22,6 +22,7 @@ body {
 }
 #adoptionBanner{
     font-size: 64px;
+    font-family: 'Dancing Script', cursive;
     border-style: solid;
     border-width: 1px;
     border-color: black;
@@ -49,7 +50,6 @@ body {
 #instructions{
     position:absolute;
     display: ; 
-    /* start display value empty to make is visible and clickable, change to none button click */
     opacity:1;
     left:0;
     right:0;
